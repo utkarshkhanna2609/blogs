@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utkarsh Khanna - Not Your Average Dev 🚀</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1f2e;
+            --secondary: #2d3748;
+            --accent: #4a5568;
+            --text-primary: #e2e8f0;
+            --text-secondary: #a0aec0;
+            --background: #111827;
+            --card-bg: #1f2937;
+            --hover: #374151;
+            --highlight: #3b82f6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: var(--background);
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--text-primary);
+            padding: 100px 0 50px;
+            text-align: center;
+            border-bottom: 1px solid var(--accent);
+        }
+
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s;
+        }
+
+        .header-content p {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            animation: fadeInUp 1s;
+        }
+
+        .fun-fact {
+            background: var(--card-bg);
+            color: var(--text-primary);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: center;
+            animation: pulse 2s infinite;
+            border: 1px solid var(--accent);
+        }
+
+        section {
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--accent);
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            background: var(--hover);
+        }
+
+        h2 {
+            color: var(--highlight);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .experience-card {
+            background: var(--primary);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--highlight);
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            background: var(--hover);
+        }
+
+        .experience-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: var(--primary);
+            color: var(--text-primary);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            border: 1px solid var(--accent);
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.1);
+            background: var(--highlight);
+            border-color: var(--highlight);
+        }
+
+        .project-card {
+            background: var(--primary);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: var(--highlight);
+            transform: translateX(10px);
+            background: var(--hover);
+        }
+
+        .project-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 40px !important;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-card {
+            background: var(--primary);
+            padding: 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--accent);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: var(--hover);
+            border-color: var(--highlight);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--highlight);
+        }
+
+        .contact-label {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .contact-value {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value:hover {
+            color: var(--highlight);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-button {
+            background: var(--primary);
+            color: var(--text-primary);
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-button:hover {
+            background: var(--highlight);
+            transform: translateY(-3px);
+            border-color: var(--highlight);
+        }
+
+        .contact-heading {
+            font-size: 2rem;
+            color: var(--highlight);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>👋 Hey, I'm Utkarsh!</h1>
+                <p>Full Stack Wizard & Professional Bug Hunter</p>
+                <p>Let's build amazing stuff together!</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="fun-fact floating">
+            "They say debugging is like being the detective in a crime movie where you're also the murderer 🕵️‍♂️"
+        </div>
+
+        <section>
+            <h2>🚀 About Me</h2>
+            <p>When I'm not fighting with merge conflicts or trying to understand why my code worked on Friday but not
+                on Monday, I'm crafting digital experiences at SynergyBoat Solutions. I turn coffee into code and bugs
+                into features (sometimes intentionally!).</p>
+            <p>My superpower? Making complex things simple and simple things complex (kidding about the second part...
+                mostly).</p>
+        </section>
+
+        <section>
+            <h2>💼 Adventure Log (aka Work Experience)</h2>
+
+            <div class="experience-card">
+                <h3>🏢 SynergyBoat Solutions</h3>
+                <p>Engineer (Jan 2025 – Present)</p>
+                <p>Building scalable solutions and occasionally breaking production (but fixing it before anyone
+                    notices!).</p>
+            </div>
+
+            <div class="experience-card">
+                <h3>🌱 Kynhood Technologies</h3>
+                <p>Junior Web Developer (Feb 2024 – Jan 2025)</p>
+                <p>NextJS, NodeJS, React, Tailwind, SCSS, MongoDB, Server Side Rendering, TypeScript</p>
+                <p>Auth Flow setup, Migration of authentication flows, Token and API management systems for frontend,
+                    Made UI fast and responsive</p>
+            </div>
+
+            <div class="experience-card">
+                <h3>🔬 Fitmedik</h3>
+                <p>Software Engineer (Backend and AI)</p>
+                <p>NodeJS, Python, Tensorflow, Scikit learn, NextJS, PineconeDB, LLMs</p>
+                <p>Taught AI models to predict burnout while trying not to burn out myself, Response normalization from
+                    LLMs, Chat features for Business requirements. </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🛠️ Cool Stuff I've Built</h2>
+
+            <div class="project-card">
+                <h3>📚 CHAT WITH PDF</h3>
+                <p>Because talking to PDFs is more fun than reading them! Built with NextJS and TailwindCSS, Openai,
+                    Pinecone DB, Vercel AI Sdk.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>🤝 CODE MATCH</h3>
+                <p>Like Tinder, but for finding coding partners. Swipe right for clean code!</p>
+            </div>
+
+            <div class="project-card">
+                <h3>🎯 SAKSHAATKAR</h3>
+                <p>An AI interview prep platform that's probably better at interviews than I am.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎯 Skills & Superpowers</h2>
+            <p>Warning: Results may vary based on coffee intake ☕</p>
+            <div class="skills-container">
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">Golang</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">NextJS</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Firebase</span>
+                <span class="skill-tag">SQL/PSQL</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">Server and Network Engineering</span>
+                <span class="skill-tag">gRPC/tRPC</span>
+                <span class="skill-tag">WebSockets</span>
+                <span class="skill-tag">Linux</span>
+            </div>
+        </section>
+        <section class="contact-section">
+            <h2 class="contact-heading">📬 Let's Connect!</h2>
+            <p>Always excited to collaborate on interesting projects and ideas</p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <span class="contact-icon">📱</span>
+                    <span class="contact-label">Phone</span>
+                    <a href="tel:+918860980477" class="contact-value">+91 8860980477</a>
+                </div>
+
+                <div class="contact-card">
+                    <span class="contact-icon">📧</span>
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:utkarshkhannaaisn@gmail.com" class="contact-value">utkarshkhannaaisn@gmail.com</a>
+                </div>
+
+                <div class="contact-card">
+                    <span class="contact-icon">📍</span>
+                    <span class="contact-label">Location</span>
+                    <span class="contact-value">New Delhi, India</span>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/utkarsh-khanna-5949911b4/" class="social-button">
+                    <span>💼</span> LinkedIn
+                </a>
+                <a href="https://github.com/utkarshkhanna2609" class="social-button">
+                    <span>🐙</span> GitHub
+                </a>
+
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
